@@ -74,5 +74,5 @@ plot_map(newdata = newdata) # plot the 2D spatial map, for a cross-section data
 }
 }
 \seealso{
-\code{tscsEstimate}, \code{tscsRegression3D}, \code{plot_dif}
+\code{\link{tscsEstimate}}, \code{\link{tscsRegression3D}}, \code{\link{plot_dif}}
 }

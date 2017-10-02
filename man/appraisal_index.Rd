@@ -56,5 +56,5 @@ plot_map(newdata = newdata) # plot the 2D spatial map, for a cross-section data
 }
 }
 \seealso{
-\code{plot_compare}
+\code{\link{plot_compare}}
 }

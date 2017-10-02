@@ -33,7 +33,7 @@
 #'   of spatial locations with missing observation.}
 #' }
 #'
-#' @seealso \code{tscsRegression}, \code{tscsEstimate3D}, \code{plot_NA}, \code{plot_map}
+#' @seealso \code{\link{tscsRegression}}, \code{\link{tscsEstimate3D}}, \code{\link{plot_NA}}, \code{\link{plot_map}}
 #'
 #' @examples
 #' \dontrun{

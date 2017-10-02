@@ -22,7 +22,7 @@
 #'   \item{\code{std}}{numeric; standard deviation of error.}
 #' }
 #'
-#' @seealso \code{plot_compare}
+#' @seealso \code{\link{plot_compare}}
 #'
 #' @examples
 #' \dontrun{

@@ -71,5 +71,5 @@ plot3D_map(newdata = newdata)
 }
 }
 \seealso{
-\code{tscsRegression3D}, \code{tscsEstimate}, \code{plot3D_NA}, \code{plot3D_map}
+\code{\link{tscsRegression3D}}, \code{\link{tscsEstimate}}, \code{\link{plot3D_NA}}, \code{\link{plot3D_map}}
 }

@@ -15,7 +15,7 @@
 #'   \code{plot_NA} is exclusive to 2D rectangular grid system. Similarly, if you want to fathom how this package
 #'   handles 3D rectangular grid system, please refer to \code{plot3D_NA}.
 #'
-#' @seealso \code{plot3D_NA}, \code{plot_map}, \code{plot_dif}
+#' @seealso \code{\link{plot3D_NA}}, \code{\link{plot_map}}, \code{\link{plot_dif}}
 #'
 #' @examples
 #' \dontrun{

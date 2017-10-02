@@ -64,5 +64,5 @@ plot3D_map(newdata = newdata)
 }
 }
 \seealso{
-\code{plot_dif}, \code{plot3D_NA}, \code{plot3D_map}
+\code{\link{plot_dif}}, \code{\link{plot3D_NA}}, \code{\link{plot3D_map}}
 }

@@ -17,7 +17,7 @@
 #'   \code{plot_dif} is exclusive to 2D rectangular grid system. Similarly, if you want to fathom how this package
 #'   handles 3D rectangular grid system, please refer to \code{plot3D_dif}.
 #'
-#' @seealso \code{plot3D_dif}, \code{plot_NA}, \code{plot_map}
+#' @seealso \code{\link{plot3D_dif}}, \code{\link{plot_NA}}, \code{\link{plot_map}}
 #'
 #' @examples
 #' \dontrun{

@@ -55,5 +55,5 @@ plot_map(newdata = newdata) # plot the 2D spatial map, for a cross-section data
 }
 }
 \seealso{
-\code{plot3D_dif}, \code{plot_NA}, \code{plot_map}
+\code{\link{plot3D_dif}}, \code{\link{plot_NA}}, \code{\link{plot_map}}
 }

@@ -38,7 +38,7 @@
 #'   the significance level you have set. Explicitly, smaller \code{alpha} results in smaller \code{percentage}.}
 #' }
 #'
-#' @seealso \code{tscsEstimate}, \code{tscsRegression3D}, \code{plot_dif}
+#' @seealso \code{\link{tscsEstimate}}, \code{\link{tscsRegression3D}}, \code{\link{plot_dif}}
 #'
 #' @examples
 #' \dontrun{
@@ -104,7 +104,7 @@ tscsRegression <- function(data, h, v, alpha = 0.05){
     adp8 <- t(data[which((X==Xp + h)&(Y==Yp - v)),c(-1,-2)]);
     reg <- lm(t(data[i,c(-1,-2)])~adp1 + adp2 + adp3 + adp4 + adp5 + adp6 + adp7 + adp8);
     error <- residuals(reg); # residuals
-    adf.resid <- adf.test(error);
+    adf.resid <- tseries::adf.test(error);
     flag[i] <- ifelse(adf.resid$p.value<=alpha,1,0); # set significance level alpha - 1 for cointegration and 0 for no
     coef_matrix$intercept[i] <- reg$coef[1];
     coef_matrix$beta1[i] <- reg$coef[2];

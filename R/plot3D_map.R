@@ -20,7 +20,7 @@
 #'   this package handles 2D rectangular grid system, please refer to \code{plot_map}.
 #' }
 #'
-#' @seealso \code{plot_map}, \code{plot3D_NA}, \code{plot3D_dif}
+#' @seealso \code{\link{plot_map}}, \code{\link{plot3D_NA}}, \code{\link{plot3D_dif}}
 #'
 #' @examples
 #' \dontrun{
@@ -60,10 +60,10 @@ plot3D_map <- function(newdata, xlab = NULL, ylab = NULL, zlab = NULL, title = N
   if (is.null(zlab)==TRUE) { zlab = names(newdata)[3]; }
   if (is.null(title)==TRUE) { title = paste("spatial(cross-section) data at time of",names(newdata)[4]); }
   
-  color <- gray((indexT - min(indexT))/(max(indexT) - min(indexT))); # mapped to [0,1]
-  plot3d(X[NA_id], Y[NA_id], Z[NA_id], col = colorNA, type = "p", size = cex, xlab = xlab, ylab = ylab, zlab = zlab);
-  plot3d(X[-NA_id], Y[-NA_id], Z[-NA_id], col = color, type = "p", size = cex, add = TRUE);
-  title3d(main = title);
+  color <- grDevices::gray((indexT - min(indexT))/(max(indexT) - min(indexT))); # mapped to [0,1]
+  rgl::plot3d(X[NA_id], Y[NA_id], Z[NA_id], col = colorNA, type = "p", size = cex, xlab = xlab, ylab = ylab, zlab = zlab);
+  rgl::plot3d(X[-NA_id], Y[-NA_id], Z[-NA_id], col = color, type = "p", size = cex, add = TRUE);
+  rgl::title3d(main = title);
 }
 
 

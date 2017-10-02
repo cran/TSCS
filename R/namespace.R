@@ -1,8 +1,9 @@
 #' @import stats
-#' @import tseries
 #' @import ggplot2
-#' @import rgl
-#' @import grDevices
+#' @importFrom tseries adf.test
+#' @importFrom rgl plot3d
+#' @importFrom rgl title3d
+#' @importFrom grDevices gray
 NULL
 
 #' @export
@@ -46,7 +47,7 @@ tscsRegression <- function(data, h, v, alpha = 0.05){
     adp8 <- t(data[which((X==Xp + h)&(Y==Yp - v)),c(-1,-2)]);
     reg <- lm(t(data[i,c(-1,-2)])~adp1 + adp2 + adp3 + adp4 + adp5 + adp6 + adp7 + adp8);
     error <- residuals(reg); # residuals
-    adf.resid <- adf.test(error);
+    adf.resid <- tseries::adf.test(error);
     flag[i] <- ifelse(adf.resid$p.value<=alpha,1,0); # set significance level alpha - 1 for cointegration and 0 for no
     coef_matrix$intercept[i] <- reg$coef[1];
     coef_matrix$beta1[i] <- reg$coef[2];
@@ -187,7 +188,7 @@ tscsRegression3D <- function(data, h1, h2, v, alpha = 0.05){
     adp14 <- t(data[which((X==Xp - h1)&(Y==Yp + h2)&(Z==Zp - v)),c(-1,-2,-3)]);
     reg <- lm(t(data[i,c(-1,-2,-3)])~adp1+adp2+adp3+adp4+adp5+adp6+adp7+adp8+adp9+adp10+adp11+adp12+adp13+adp14);
     error <- residuals(reg); # residuals
-    adf.resid <- adf.test(error);
+    adf.resid <- tseries::adf.test(error);
     flag[i] <- ifelse(adf.resid$p.value<=alpha,1,0); # set significance level alpha - 1 for cointegration and 0 for no
     coef_matrix$intercept[i] <- reg$coef[1];
     coef_matrix$beta1[i] <- reg$coef[2];
@@ -472,10 +473,10 @@ plot3D_map <- function(newdata, xlab = NULL, ylab = NULL, zlab = NULL, title = N
   if (is.null(zlab)==TRUE) { zlab = names(newdata)[3]; }
   if (is.null(title)==TRUE) { title = paste("spatial(cross-section) data at time of",names(newdata)[4]); }
   
-  color <- gray((indexT - min(indexT))/(max(indexT) - min(indexT))); # mapped to [0,1]
-  plot3d(X[NA_id], Y[NA_id], Z[NA_id], col = colorNA, type = "p", size = cex, xlab = xlab, ylab = ylab, zlab = zlab);
-  plot3d(X[-NA_id], Y[-NA_id], Z[-NA_id], col = color, type = "p", size = cex, add = TRUE);
-  title3d(main = title);
+  color <- grDevices::gray((indexT - min(indexT))/(max(indexT) - min(indexT))); # mapped to [0,1]
+  rgl::plot3d(X[NA_id], Y[NA_id], Z[NA_id], col = colorNA, type = "p", size = cex, xlab = xlab, ylab = ylab, zlab = zlab);
+  rgl::plot3d(X[-NA_id], Y[-NA_id], Z[-NA_id], col = color, type = "p", size = cex, add = TRUE);
+  rgl::title3d(main = title);
 }
 
 

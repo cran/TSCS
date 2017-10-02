@@ -29,7 +29,7 @@
 #'   \item The blue line stands for fitted straight line.
 #' }
 #'
-#' @seealso \code{appraisal_index}
+#' @seealso \code{\link{appraisal_index}}
 #'
 #' @examples
 #' \dontrun{

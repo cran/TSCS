@@ -23,7 +23,7 @@
 #'   this package handles 2D rectangular grid system, please refer to \code{plot_dif}.
 #' }
 #'
-#' @seealso \code{plot_dif}, \code{plot3D_NA}, \code{plot3D_map}
+#' @seealso \code{\link{plot_dif}}, \code{\link{plot3D_NA}}, \code{\link{plot3D_map}}
 #'
 #' @examples
 #' \dontrun{
